@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <style>
+        :root {
+            --preto: #000000;
+            --cinza: #1a1a1a;
+            --cinza-texto: #808080;
+            --ciano: #00ffff;
+            --branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--preto);
+            color: var(--branco);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Fundo de Grid Digital */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(var(--cinza) 1px, transparent 1px),
+                linear-gradient(90deg, var(--cinza) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        /* Navegação Fixa */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid var(--ciano);
+            display: flex;
+            justify-content: right;
+            gap: 25px;
+            padding: 15px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--ciano);
+            text-shadow: 0 0 10px var(--ciano);
+        }
+
+        /* Header Hero */
+        header {
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, #00ffff10 0%, transparent 70%);
+        }
+
+        .glitch-title {
+            font-size: clamp(3rem, 10vw, 5rem);
+            letter-spacing: 15px;
+            text-shadow: 3px 3px var(--ciano);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--ciano);
+            letter-spacing: 5px;
+            font-weight: 300;
+        }
+
+        /* Seções */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            border-left: 5px solid var(--ciano);
+            padding-left: 20px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Sobre */
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--branco);
+            max-width: 650px;
+            text-align: justify;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .about-img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--ciano);
+            box-shadow: 0 0 20px var(--ciano);
+            background: var(--cinza);
+            margin-left: 80px;
+            margin-right: 0;
+        }
+
+        /* Experiência */
+        .exp-card {
+            background: var(--cinza);
+            border: 1px solid var(--cinza-texto);
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .exp-card:hover {
+            border-color: var(--ciano);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            color: var(--ciano);
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        /* Habilidades (Sua Stack) */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-box {
+            border: 1px solid var(--ciano);
+            padding: 12px 30px;
+            color: var(--ciano);
+            background: rgba(0, 255, 255, 0.05);
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            background: var(--ciano);
+            color: var(--preto);
+            box-shadow: 0 0 20px var(--ciano);
+        }
+
+        /* Portfólio */
+        .grid-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--cinza);
+            border: 1px solid var(--cinza-texto);
+            padding: 40px;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            border-color: var(--ciano);
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+        }
+
+        .card h3 { color: var(--ciano); margin-bottom: 15px; font-family: monospace; }
+
+        /* Contatos */
+        .contact-box {
+            text-align: center;
+            padding: 60px;
+            border: 1px dashed var(--ciano);
+            background: rgba(26, 26, 26, 0.5);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--ciano);
+            color: var(--ciano);
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: var(--ciano);
+            color: var(--preto);
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--cinza-texto);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover { color: var(--branco); }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: var(--cinza-texto);
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            border-top: 1px solid var(--cinza);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#habilidades">Linguagens</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contatos">Contatos</a>
+    </nav>
+
+    <header id="inicio">
+        <h1 class="glitch-title">LUAN KNACHAKA</h1>
+        <p class="subtitle">SOFTWARE ERP SUPPORT // DEVELOPER</p>
+    </header>
+
+    <div class="container" id="sobre">
+        <h2>./Sobre</h2>
+            <div class="about-section">
+                <div class="about-text">
+                    <p>Estudante de Ciências da Computação com uma sólida base de conhecimentos na área de desenvolvimento Back-End, proativo e com forte habilidade de aprendizado rápido, procuro oportunidade de emprego para contribuir com a empresa e desenvolver habilidades práticas no ambiente de trabalho.</p>
+                </div>
+                <img src="minha-foto.jpg" alt="Foto de Luan Knachaka" class="about-img">
+            </div>
+    </div>
+
+    <div class="container" id="experiencia">
+        <h2>./Experiência</h2>
+        <div class="exp-card">
+            <div class="exp-header">
+                <span>SUPORTE DE SISTEMAS ERP</span>
+                <span>2023 - PRESENTE</span>
+            </div>
+            <p>Suporte de nível 1 e 2 em sistemas ERP: Atendimento ao usuário, Resolução de problemas e Extração e manutenção de dados utilizando consultas SQL para auditorias e tomada de decisão gerencial.</p>
+        </div>
+    </div>
+
+    <div class="container" id="habilidades">
+        <h2>./Linguagens</h2>
+        <div class="skills-container">
+            <div class="skill-box">Java</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">Crystal Language</div>
+            <div class="skill-box">HTML/CSS</div>
+            <div class="skill-box">SQL</div>
+        </div>
+    </div>
+
+    <!--<div class="container" id="portfolio">
+        <h2>./Projetos</h2>
+        <div class="grid-projects">
+            <div class="card">
+                <h3>CRYSTAL_ORBIT</h3>
+                <p>Engine de processamento paralelo desenvolvida em Crystal para baixa latência.</p>
+            </div>
+            <div class="card">
+                <h3>PY_AUTOMATA</h3>
+                <p>Framework de automação inteligente e análise de dados complexos com Python.</p>
+            </div>
+            <div class="card">
+                <h3>JAVA_CORE_API</h3>
+                <p>Arquitetura de microsserviços bancários com alta resiliência e segurança.</p>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="container" id="contatos">
+        <h2>./Contato</h2>
+        <div class="contact-box">
+            <p>Deseja integrar sua equipe com tecnologia de ponta?</p>
+            <a href="mailto:luanslkna@gmail.com" class="contact-btn">ESTABELECER CONEXÃO</a>
+            <div class="social-links">
+                <a href="https://github.com/Luan-Knachak4">GitHub</a>
+                <a href="https://www.linkedin.com/in/luan-knachaka/">Linkedin</a>
+                <a href="https://www.instagram.com/luan_kna/">Instragram</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Luan Knachaka Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

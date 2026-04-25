@@ -9,7 +9,7 @@
             --preto: #000000;
             --cinza: #1a1a1a;
             --cinza-texto: #808080;
-            --ciano: #00ffff;
+            --laranja: #FF5C00;
             --branco: #ffffff;
         }
 
@@ -45,7 +45,7 @@
             position: fixed;
             top: 0; width: 100%;
             background: rgba(0, 0, 0, 0.9);
-            border-bottom: 1px solid var(--ciano);
+            border-bottom: 1px solid var(--laranja);
             display: flex;
             justify-content: right;
             gap: 25px;
@@ -64,8 +64,8 @@
         }
 
         nav a:hover {
-            color: var(--ciano);
-            text-shadow: 0 0 10px var(--ciano);
+            color: var(--laranja);
+            text-shadow: 0 0 10px var(--laranja);
         }
 
         /* Header Hero */
@@ -76,18 +76,18 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle, #00ffff10 0%, transparent 70%);
+            background: radial-gradient(circle, #ff950010 0%, transparent 70%);
         }
 
         .glitch-title {
             font-size: clamp(3rem, 10vw, 5rem);
             letter-spacing: 15px;
-            text-shadow: 3px 3px var(--ciano);
+            text-shadow: 3px 3px var(--laranja);
             margin-bottom: 10px;
         }
 
         .subtitle {
-            color: var(--ciano);
+            color: var(--laranja);
             letter-spacing: 5px;
             font-weight: 300;
         }
@@ -101,7 +101,7 @@
 
         h2 {
             font-size: 2.2rem;
-            border-left: 5px solid var(--ciano);
+            border-left: 5px solid var(--laranja);
             padding-left: 20px;
             margin-bottom: 50px;
             text-transform: uppercase;
@@ -130,8 +130,8 @@
             height: 240px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--ciano);
-            box-shadow: 0 0 20px var(--ciano);
+            border: 3px solid var(--laranja);
+            box-shadow: 0 0 20px var(--laranja);
             background: var(--cinza);
             margin-left: 80px;
             margin-right: 0;
@@ -147,14 +147,14 @@
         }
 
         .exp-card:hover {
-            border-color: var(--ciano);
+            border-color: var(--laranja);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
         }
 
         .exp-header {
             display: flex;
             justify-content: space-between;
-            color: var(--ciano);
+            color: var(--laranja);
             margin-bottom: 10px;
             font-weight: bold;
             font-family: monospace;
@@ -168,9 +168,9 @@
         }
 
         .skill-box {
-            border: 1px solid var(--ciano);
+            border: 1px solid var(--laranja);
             padding: 12px 30px;
-            color: var(--ciano);
+            color: var(--laranja);
             background: rgba(0, 255, 255, 0.05);
             font-weight: bold;
             font-family: 'Courier New', Courier, monospace;
@@ -179,9 +179,9 @@
         }
 
         .skill-box:hover {
-            background: var(--ciano);
+            background: var(--laranja);
             color: var(--preto);
-            box-shadow: 0 0 20px var(--ciano);
+            box-shadow: 0 0 20px var(--laranja);
         }
 
         /* Portfólio */
@@ -199,26 +199,64 @@
         }
 
         .card:hover {
-            border-color: var(--ciano);
+            border-color: var(--laranja);
             transform: translateY(-5px);
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
         }
 
-        .card h3 { color: var(--ciano); margin-bottom: 15px; font-family: monospace; }
+        .card h3 { color: var(--laranja); margin-bottom: 15px; font-family: monospace; }
+        .card-img {
+    width: 300px;          
+    height: 180px;         
+    object-fit: cover;    
+    border: 1px solid var(--laranja); 
+    margin-bottom: 10px;  
+    display: block;       
+    border-radius: 4px;   
+    filter: grayscale(100%); 
+    transition: 0.3s;
+    align-self: center;
+    margin-top: 30px;
+}
 
+.card:hover .card-img {
+    filter: grayscale(0%);
+    box-shadow: 0 0 10px var(--laranja); 
+}
+
+
+.card {
+    padding: 25px !important; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+#portfolio a {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+
+.card-link:hover .card {
+    border-color: var(--laranja);
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 92, 0, 0.15);
+}
         /* Contatos */
         .contact-box {
             text-align: center;
             padding: 60px;
-            border: 1px dashed var(--ciano);
+            border: 1px dashed var(--laranja);
             background: rgba(26, 26, 26, 0.5);
         }
 
         .contact-btn {
             display: inline-block;
             padding: 15px 40px;
-            border: 1px solid var(--ciano);
-            color: var(--ciano);
+            border: 1px solid var(--laranja);
+            color: var(--laranja);
             text-decoration: none;
             margin-top: 20px;
             font-weight: bold;
@@ -227,7 +265,7 @@
         }
 
         .contact-btn:hover {
-            background: var(--ciano);
+            background: var(--laranja);
             color: var(--preto);
         }
 
@@ -254,7 +292,7 @@
             letter-spacing: 4px;
             border-top: 1px solid var(--cinza);
         }
-        /* Responsividade para dispositivos móveis */
+        
         @media (max-width: 800px) {
             nav {
                 flex-direction: column;
@@ -350,6 +388,14 @@
                 font-size: 0.95rem;
             }
         }
+        @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#phone-display {
+    text-shadow: 0 0 8px var(--laranja);
+}
     </style>
 </head>
 <body>
@@ -358,23 +404,23 @@
         <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
         <a href="#experiencia">Experiência</a>
-        <a href="#habilidades">Linguagens</a>
+        <!--<a href="#habilidades">Linguagens</a>-->
         <a href="#portfolio">Portfólio</a>
         <a href="#contatos">Contatos</a>
     </nav>
 
     <header id="inicio">
-        <h1 class="glitch-title">LUAN KNACHAKA</h1>
-        <p class="subtitle">SOFTWARE ERP SUPPORT // DEVELOPER</p>
+        <h1 class="glitch-title">LAURA DORNELLES</h1>
+        <p class="subtitle">DESIGNER // COMUNICADORA</p>
     </header>
 
     <div class="container" id="sobre">
         <h2>./Sobre</h2>
             <div class="about-section">
                 <div class="about-text">
-                    <p>Estudante de Ciências da Computação com uma sólida base de conhecimentos na área de desenvolvimento Back-End, proativo e com forte habilidade de aprendizado rápido, procuro oportunidade de emprego para contribuir com a empresa e desenvolver habilidades práticas no ambiente de trabalho.</p>
+                    <p>Meu nome é Laura Dornelles. Sou estudante de Publicidade e Propaganda e atuo no universo da comunicação como fotógrafa, videomaker, designer e cerimonialista. Minha trajetória começou lá atrás, na paixão pelo audiovisual. Com o tempo, descobri na comunicação um espaço onde pude transformar esse amor em prática: contar histórias, criar imagens potentes e dar vida a ideias que fazem sentido. Hoje, sigo explorando esse caminho com curiosidade, sensibilidade e muita vontade de construir projetos que importam. Vamos criar algo juntos?</p>
                 </div>
-                <img src="minha-foto.jpg" alt="Foto de Luan Knachaka" class="about-img">
+                <img src="foto.jpg" alt="Foto" class="about-img">
             </div>
     </div>
 
@@ -389,7 +435,7 @@
         </div>
     </div>
 
-    <div class="container" id="habilidades">
+    <!--<div class="container" id="habilidades">
         <h2>./Linguagens</h2>
         <div class="skills-container">
             <div class="skill-box">Java</div>
@@ -398,42 +444,65 @@
             <div class="skill-box">HTML/CSS</div>
             <div class="skill-box">SQL</div>
         </div>
-    </div>
+    </div>-->
 
-    <!--<div class="container" id="portfolio">
+    <div class="container" id="portfolio">
         <h2>./Projetos</h2>
         <div class="grid-projects">
             <div class="card">
-                <h3>CRYSTAL_ORBIT</h3>
-                <p>Engine de processamento paralelo desenvolvida em Crystal para baixa latência.</p>
+                <h3>Storytelling - Baggio Café</h3>
+                <p>Projeto desenvolvido para fortalecer a presença da marca através de uma narrativa visual mais humana e sensorial. Atuei em todas as etapas do audiovisual:</p>
+                <img src="xicara.jpg" alt="preview" class="card-img">
             </div>
             <div class="card">
-                <h3>PY_AUTOMATA</h3>
-                <p>Framework de automação inteligente e análise de dados complexos com Python.</p>
+                <h3>Ensaio fotográfico</h3>
+                <p>BREAK nOISE QUEBRA TUDO!</p>
+                <img src="ensaioqeuebratudo.png" alt="preview" class="card-img">
             </div>
+            <a href="https://www.youtube.com/watch?v=SOjveqlQcu0" target="_blank" rel="noopener noreferrer" class="card-link">
             <div class="card">
-                <h3>JAVA_CORE_API</h3>
-                <p>Arquitetura de microsserviços bancários com alta resiliência e segurança.</p>
+                <h3>Documentário: Catadores da dignidade</h3>
+                <p>Participação na produção do documentário, contribuindo em diferentes frentes do processo criativo e técnico: Roteiro, captação, assistente de produção e edição. Clique para acessar.</p>
+                <img src="catadores_dig.jpg" alt="preview" class="card-img">
             </div>
-        </div>
-    </div>-->
-
-    <div class="container" id="contatos">
-        <h2>./Contato</h2>
-        <div class="contact-box">
-            <p>Deseja integrar sua equipe com tecnologia de ponta?</p>
-            <a href="mailto:luanslkna@gmail.com" class="contact-btn">ESTABELECER CONEXÃO</a>
-            <div class="social-links">
-                <a href="https://github.com/Luan-Knachak4">GitHub</a>
-                <a href="https://www.linkedin.com/in/luan-knachaka/">Linkedin</a>
-                <a href="https://www.instagram.com/luan_kna/">Instragram</a>
-            </div>
+            </a>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Luan Knachaka Todos os direitos reservados.</p>
-    </footer>
+    <div class="container" id="contatos">
+    <h2>./Contato</h2>
+    <div class="contact-box">
+        <p>Deseja entrar em contato?</p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Lauradornellescoracini@gmail.com" target="_blank" class="contact-btn">Enviar um e-mail</a>
+        
+        <div class="social-links">
+    <a href="javascript:void(0)" id="btn-telefone" style="cursor: pointer;">Telefone</a>
+    <a href="https://www.linkedin.com/in" target="_blank">Linkedin</a>
+    <a href="https://www.instagram.com/Laura.coracini/" target="_blank">Instagram</a>
+</div>
 
+<div id="phone-display" style="display: none !important; color: var(--laranja); margin-top: 20px; font-family: monospace; font-weight: bold; font-size: 1.2rem;">
+    +55 (55) 9 9238-9315
+</div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2026 Laura Dornelles Todos os direitos reservados.</p>
+    </footer>
+<script>
+    document.getElementById('btn-telefone').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); 
+        
+        var display = document.getElementById('phone-display');
+        
+        if (display.style.getPropertyValue('display') === 'none' || display.style.display === 'none') {
+            display.style.setProperty('display', 'block', 'important');
+        } else {
+            display.style.setProperty('display', 'none', 'important');
+        }
+    });
+</script>
 </body>
 </html>
